@@ -3,17 +3,13 @@ name = "linprog"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "sergey", email = "sergeys4016@gmail.com" }
-]
+authors = [{ name = "sergey", email = "sergeys4016@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = [
-    "numpy>=2.5.3",
-    "scipy>=1.18.1",
-]
+dependencies = ["numpy>=2.5.3", "scipy>=1.18.1"]
 
 [project.scripts]
 linprog = "linprog:main"
+gomory = "gomory:main"
 
 [build-system]
 requires = ["uv_build>=0.12.18,<0.13.0"]
