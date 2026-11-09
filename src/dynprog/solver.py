@@ -30,9 +30,9 @@ def solve(D, h, M, B, i0, cost: Callable[[int], int]) -> None:
         if following == inf:
             return None
         current = cost(x) + h * j + following
-        return current, f"{cost(x)}+{h * j}+{following}"
+        return current, f"{cost(x)}+{h * j}+{following}={current}"
 
-    width = 10
+    width = 14
     for n in range(1, N + 1):
         t = N - n
         print(f"\nТаблица {n} - расчет f{n}(i), спрос d{n} = {D[t]}")

@@ -34,7 +34,7 @@ def main():
         distance[node] = min(options.values())
         best = [target for target, value in options.items() if value == distance[node]]
         choices = ", ".join(
-            f"через {target}: {value}" for target, value in options.items()
+            f"через {target}: {E[(node, target)]}+{distance[target]}={value}" for target, value in options.items()
         )
         print(
             f"s={node}: {choices}  ->  f={distance[node]}, "

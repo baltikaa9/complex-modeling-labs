@@ -2,11 +2,11 @@
 
 # Доход g_i(x): выделенная сумма -> доход из таблицы варианта 11.
 g = [
-    {0: 0, 30: 10, 50: 16, 70: 30},
-    {0: 0, 30: 12, 50: 32, 70: 45},
-    {0: 0, 30: 15, 50: 25, 70: 32},
+    {0: 0, 30: 10, 50: 16, 90: 30},
+    {0: 0, 30: 12, 50: 32, 90: 45},
+    {0: 0, 30: 15, 50: 25, 90: 32},
 ]
-C, step = 70, 10
+C, step = 90, 10
 
 
 def main():
@@ -29,9 +29,11 @@ def main():
                 for allocation, value in cells.items()
                 if value == current_values[amount]
             )
-            if amount in (30, 50, 70):
+            if amount in (30, 50, 90):
                 details = "  ".join(
-                    f"x={allocation}:{value}" for allocation, value in cells.items()
+                    f"x={allocation}: "
+                    f"{income_by_amount[allocation]}+" 
+                    f"{values[-1][amount - allocation]}={value}" for allocation, value in cells.items()
                 )
                 print(
                     f"c={amount}: {details}  ->  "
